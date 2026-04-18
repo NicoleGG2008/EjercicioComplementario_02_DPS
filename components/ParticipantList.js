@@ -19,7 +19,6 @@ export default function ParticipantList({
   showWinnerModal,
   setShowWinnerModal
 }) {
-
   const renderParticipant = ({ item }) => (
     <View
       style={[
@@ -40,7 +39,6 @@ export default function ParticipantList({
 
   return (
     <View style={styles.container}>
-
       <FlatList
         data={participants}
         renderItem={renderParticipant}
@@ -87,11 +85,9 @@ export default function ParticipantList({
             <Text style={styles.winnerTitle}>
               🎊 ¡GANADOR!
             </Text>
-
             <Text style={styles.winnerName}>
               {winner}
             </Text>
-
             <TouchableOpacity
               style={styles.closeModalButton}
               onPress={() => setShowWinnerModal(false)}
@@ -103,7 +99,6 @@ export default function ParticipantList({
           </View>
         </View>
       </Modal>
-
     </View>
   );
 }
@@ -112,115 +107,128 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
   participantItem: {
-    backgroundColor: 'white',
-    padding: 16,
-    marginVertical: 4,
-    borderRadius: 12,
-    elevation: 2,
+    backgroundColor: '#FADCD5', 
+    padding: 20,
+    marginVertical: 6,
+    borderRadius: 16,
+    shadowColor: '#4B2138',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: '#765D67',
   },
-
   winnerItem: {
-    backgroundColor: '#FFF3CD',
+    backgroundColor: '#6D3C52', 
+    borderColor: '#FADCD5',
     borderWidth: 3,
-    borderColor: '#FFD700',
+    shadowColor: '#FADCD5',
+    shadowOpacity: 0.6,
+    transform: [{ scale: 1.05 }],
   },
-
   participantText: {
     fontSize: 18,
-    color: '#333',
+    color: '#2D222F', 
+    fontWeight: '600',
   },
-
   winnerText: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#DAA520',
+    fontWeight: '800',
+    color: '#FADCD5', 
   },
-
   emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 40,
+    paddingVertical: 60,
   },
-
   emptyText: {
-    fontSize: 18,
-    color: '#666',
+    fontSize: 20,
+    color: '#765D67', 
+    fontWeight: '600',
+    marginBottom: 8,
   },
-
   emptySubText: {
-    fontSize: 14,
-    color: '#999',
-    marginTop: 8,
+    fontSize: 16,
+    color: '#6D3C52', 
   },
-
   buttonContainer: {
-    marginTop: 10,
+    paddingVertical: 20,
   },
-
   button: {
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 12,
+    padding: 18,
+    borderRadius: 16,
+    marginBottom: 14,
     alignItems: 'center',
-    elevation: 3,
+    shadowColor: '#4B2138',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 8,
   },
-
   selectButton: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#6D3C52', // Vino rosado
+    borderWidth: 2,
+    borderColor: '#FADCD5',
   },
-
   resetButton: {
-    backgroundColor: '#f44336',
+    backgroundColor: '#4B2138', // Borgoña oscuro
   },
-
   buttonText: {
-    color: 'white',
+    color: '#FADCD5', // Rosa beige claro
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '700',
   },
-
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    backgroundColor: 'rgba(27, 12, 26, 0.85)', // Ciruela casi negro
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   winnerModal: {
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 40,
+    backgroundColor: '#2D222F', // Morado gris profundo
+    borderRadius: 24,
+    padding: 50,
     alignItems: 'center',
-    width: width * 0.85,
-    elevation: 10,
+    width: width * 0.88,
+    shadowColor: '#FADCD5',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.7,
+    shadowRadius: 24,
+    elevation: 20,
+    borderWidth: 2,
+    borderColor: '#6D3C52',
   },
-
   winnerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#4CAF50',
-    marginBottom: 20,
-  },
-
-  winnerName: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: '900',
-    color: '#DAA520',
-    marginBottom: 30,
+    color: '#FADCD5', // Rosa beige claro
+    marginBottom: 24,
     textAlign: 'center',
   },
-
-  closeModalButton: {
-    backgroundColor: '#2196F3',
-    paddingHorizontal: 30,
-    paddingVertical: 12,
-    borderRadius: 25,
+  winnerName: {
+    fontSize: 36,
+    fontWeight: '900',
+    color: '#FADCD5',
+    marginBottom: 40,
+    textAlign: 'center',
+    textShadowColor: 'rgba(109, 60, 82, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
   },
-
+  closeModalButton: {
+    backgroundColor: '#765D67', // Malva grisáceo
+    paddingHorizontal: 40,
+    paddingVertical: 16,
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: '#FADCD5',
+  },
   closeModalText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: '#FADCD5',
+    fontSize: 20,
+    fontWeight: '700',
   },
 });

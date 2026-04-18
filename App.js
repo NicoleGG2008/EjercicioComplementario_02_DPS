@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Alert } from 'react-native';
-import ParticipantInput from './components/Participantlnput';
+import ParticipantInput from './components/ParticipantInput';
 import ParticipantList from './components/ParticipantList';
 
 export default function App() {
@@ -10,14 +10,11 @@ export default function App() {
 
   const addParticipant = (name) => {
     const trimmedName = name.trim();
-
     if (!trimmedName) return;
-
     if (participants.includes(trimmedName)) {
       Alert.alert('Error', 'Este participante ya existe');
       return;
     }
-
     setParticipants(prev => [...prev, trimmedName]);
   };
 
@@ -28,7 +25,6 @@ export default function App() {
     }
     const randomIndex = Math.floor(Math.random() * participants.length);
     const selectedWinner = participants[randomIndex];
-
     setWinner(selectedWinner);
     setShowWinnerModal(true);
   };
@@ -42,7 +38,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ParticipantInput onAddParticipant={addParticipant} />
-
       <ParticipantList
         participants={participants}
         winner={winner}
@@ -58,7 +53,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#1B0C1A', 
     padding: 20,
   },
 });
